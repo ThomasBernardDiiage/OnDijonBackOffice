@@ -1,3 +1,21 @@
+# Présentation
+
+<img width="1678" alt="Capture d’écran 2023-02-28 à 13 07 46" src="./Documentation//login.png">
+
+<img width="1678" alt="Capture d’écran 2023-02-28 à 13 07 46" src="./Documentation//register.png">
+
+<img width="1678" alt="Capture d’écran 2023-02-28 à 13 07 46" src="./Documentation//shelters.png">
+
+<img width="1678" alt="Capture d’écran 2023-02-28 à 13 07 46" src="./Documentation//shelter.png">
+
+
+# Lancement
+
+```shell
+sudo ng serve
+```
+
+
 # Déploiement  
 
 Le déploiement de ce projet Angular ce réalise automatiquement lors d'un push sur les branches production, pre-production et dev.
