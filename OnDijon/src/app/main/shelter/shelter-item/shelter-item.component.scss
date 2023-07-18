@@ -1,0 +1,32 @@
+section {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    cursor: pointer;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    
+    div{
+        display: flex;
+        flex-direction: column;
+
+        h4 {
+            margin: 0;
+            color: var(--primary) !important;
+        }
+    }
+}
+
+section:hover {
+    background-color: var(--light);
+}
+
+i {
+    color: var(--primary);
+}
+
+i:last-child {
+    color: var(--grey);
+    margin-left: auto;
+}

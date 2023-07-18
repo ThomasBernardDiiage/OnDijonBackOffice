@@ -1,0 +1,37 @@
+<main>
+    <header>
+        <div>
+            <h1>Tableau de bord des abris</h1>
+            <h3>Voici votre tableau de bord</h3>
+        </div>
+
+        <img src="assets/dijon_metropole.png"/>
+    </header>
+
+    <section class="content">
+
+        <div class="shelter-list-container">
+            <h4>Abris</h4>
+            <span *ngIf="shelters.length > 0">
+                <app-shelter-item [shelter]="shelter" *ngFor="let shelter of shelters"/>
+            </span>
+            <article *ngIf="shelters.length === 0">
+                <ng-lottie
+                class="animation"
+                [options]="{
+                    path:'assets/empty.json',
+                    
+                }"/>
+                <h3>Aucun abris à afficher</h3>
+            </article>
+        </div>
+
+        <div class="map-container">
+            <app-map
+                [latitude]="47.321994"
+                [longitude]="5.040077"
+                [zoom]="13"
+                [pins$]="pins$"/>
+        </div>
+    </section>
+</main>

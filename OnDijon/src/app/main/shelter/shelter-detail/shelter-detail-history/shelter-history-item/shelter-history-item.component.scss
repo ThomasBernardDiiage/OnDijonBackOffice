@@ -1,0 +1,49 @@
+main {
+    display: flex;
+    padding: 10px 20px;
+    gap: 10px;
+
+
+
+    i {
+        font-size: 18pt;
+        margin-left: auto;
+    }
+
+    i.in {
+        color: var(--green);
+        transform: rotate(135deg);
+    }
+
+    i.out {
+        color: var(--red);
+        transform: rotate(-45deg);
+    }
+
+    span {
+        width: 30px;
+        height: 30px;
+        background-color: var(--orange);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            color: var(--white);
+        }
+    }
+}
+
+main:hover {
+    background-color: var(--light);
+    border-radius: 8px;
+}
+
+p {
+    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    vertical-align:middle;
+}

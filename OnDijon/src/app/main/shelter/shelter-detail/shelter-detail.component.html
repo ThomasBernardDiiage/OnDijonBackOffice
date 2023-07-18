@@ -1,0 +1,29 @@
+<main *ngIf="shelter != null">
+    <header>
+        <div>
+            <h1>Detail de l'abris</h1>
+            <h3>{{shelter.name}} ({{shelter.occupation}}/{{shelter.capacity}})</h3>
+        </div>
+
+        <img src="assets/dijon_metropole.png"/>
+    </header>
+
+
+    <section>
+        <app-shelter-detail-informations [shelter]="shelter"/>
+
+        <app-shelter-detail-status [reports]="shelter.reports"/>
+
+
+        <app-map
+            class="map"
+            [zoom]="14"
+            [latitude]="shelter.latitude"
+            [longitude]="shelter.longitude"
+            [pin$]="pin$"/>
+
+        <app-shelter-detail-history [shelter]="shelter"/>
+
+        <app-shelter-detail-stat class="stats" [shelter]="shelter"/>
+    </section>
+</main>

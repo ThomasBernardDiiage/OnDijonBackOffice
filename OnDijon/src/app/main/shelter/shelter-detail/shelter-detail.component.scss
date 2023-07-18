@@ -1,0 +1,55 @@
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: calc(100% - 40px);
+
+    header {
+        display: flex;
+
+        img {
+            margin: 0 20px;
+            margin-left: auto;
+            height: 60px;
+        }
+    }
+
+    section {
+        flex: 1;
+        flex-basis: 0;
+        display: grid;
+        grid-template-columns: 400px 300px 1.7fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+
+        * {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .stats {
+            grid-column: 2 / 4;
+        }
+
+        .map {
+            padding: 0;
+        }
+    }
+
+
+    @media screen and (max-width: 900px) {
+        section {
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+
+
+            * {
+                display: block;
+                min-height: 300px;
+            }
+        }
+    }
+} 

@@ -1,0 +1,16 @@
+<main>
+    <h4>Historique</h4>
+    <span *ngIf="shelter?.history?.length ?? 0 > 0">
+        <app-shelter-history-item [item]="shelterHistory" *ngFor="let shelterHistory of shelter?.history"/>
+    </span>
+
+    <article *ngIf="shelter?.history?.length === 0">
+        <ng-lottie
+            class="animation"
+            [options]="{
+                path:'assets/empty.json',
+            
+            }"/>
+        <h3>Aucune activité pour cet abris</h3>
+    </article>
+</main>

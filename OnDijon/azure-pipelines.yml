@@ -1,0 +1,45 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+- production
+- pre-production
+- dev
+
+variables:
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/production') }}:
+    buildConfiguration: 'prod'
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/pre-production') }}:
+    buildConfiguration: 'preprod'
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/heads/dev') }}:
+    buildConfiguration: 'test'
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '19.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    cd OnDijon
+    npm install -g @angular/cli
+    npm install
+    ng build --configuration=$(buildConfiguration)
+  displayName: 'npm install and build'
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: './OnDijon/dist'
+    Contents: '**'
+    TargetFolder: $(Build.ArtifactStagingDirectory)
+  
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'dist'
+    publishLocation: 'pipeline'

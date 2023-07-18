@@ -1,0 +1,11 @@
+<div class="expansion-panel">
+    <div class="header" (click)="toggle()">
+      <ng-content select="[panel-header]">
+      </ng-content>
+      <i class="fa-solid fa-chevron-right arrow" [@rotateAnimation]="expanded"></i>
+    </div>
+    <div class="content" [@expansionAnimation]="expanded">
+      <ng-content select="[panel-content]"></ng-content>
+    </div>
+  </div>
+  

@@ -1,0 +1,34 @@
+<main>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/fr/a/ad/Logo-On-Dijon_image-xs.jpg"/>
+
+        <a routerLink="register">Nouvel utilisateur ? <span>S'inscrire</span></a>
+    </header>
+    <section class="left-panel">
+        <ng-lottie
+            [options]="{
+                path:'https://assets6.lottiefiles.com/packages/lf20_ucbyrun5.json'
+            }"/>
+    </section>
+
+    <section class="right-panel">
+        <article>
+            <h1>Bienvenue !</h1>
+            <h3>Connectez vous pour continuer</h3>
+        </article>
+
+        <article class="fields">
+            <input [(ngModel)]="email" type="text" placeholder="Adresse mail">
+            <input [(ngModel)]="password" type="password" placeholder="Mot de passe">
+        </article>
+
+        <button (click)="login()" routerLink="/main/shelter">Se connecter</button>
+
+        <article class="social_network">
+            <span class="google"></span>
+            <span class="facebook"></span>
+            <span class="instagram"></span>
+        </article>
+
+    </section>
+</main>

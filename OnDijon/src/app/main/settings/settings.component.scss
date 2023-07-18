@@ -1,0 +1,36 @@
+main {
+    display: flex;
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+    padding: 20px;
+    flex-direction: column;
+    gap: 20px;
+
+
+    header {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+
+        img {
+            margin: 0 20px;
+            margin-left: auto;
+            height: 60px;
+        }
+    }
+
+    section.content {
+        display: flex;
+        flex: 1;
+        background-color: var(--white);
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+
+        h5.version {
+            margin-top: auto;
+            color: var(--primary);
+        }
+    }
+}

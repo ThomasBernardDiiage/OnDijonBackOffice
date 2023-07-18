@@ -1,0 +1,23 @@
+<main>
+    <h4>Status</h4>
+
+    <section *ngIf="reportsWrapper?.length ?? 0 > 0">
+        <app-expansion-panel class="item" *ngFor="let report of reportsWrapper">
+            <div panel-header class="header">
+                <span><i class="fa-solid fa-exclamation"></i></span>
+        
+                <p>{{report.object}}</p>
+            </div>
+            <div panel-content class="content">
+                <p>{{report.comment}}</p>
+                <h6>Posté le {{report.date}}</h6>
+            </div>
+            </app-expansion-panel>
+    </section>
+    <section *ngIf="reportsWrapper?.length === 0" class="empty">
+        <ng-lottie class="animation" [options]="{
+            path:'assets/attention.json'
+        }"/>
+        <h3>Ici s'afficherons les retours utilisateurs</h3>
+    </section>
+</main>
